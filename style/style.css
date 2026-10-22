@@ -1,6 +1,10 @@
 @import url(https://cdn.jsdelivr.net/npm/bootstrap@6.0.0-alpha.1/dist/css/bootstrap.min.css);
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css");
 
+body {
+    margin:unset
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -74,4 +78,24 @@ body #footer {
 li .footer-link{
     text-decoration: none;
     color: hwb(132 0% 79%);
+}
+
+
+
+@media screen and (max-width: 650px) {
+    #hero-section div .rounded {
+        display: none
+    }
+
+    #hero-section .hero-text h1{
+        font-size: 1.5em;
+    }
+    #hero-section .hero-text p{
+        font-size: 0.7em;
+    }
+    #hero-section .hero-text{
+        text-align: center
+    }
+
+
 }
