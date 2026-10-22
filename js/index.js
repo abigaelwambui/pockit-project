@@ -1,7 +1,7 @@
 
 const drawer = document.querySelector('.drawer')
 const toggleButton = document.querySelector('.navbar-toggler')
-const closeButton = document.querySelector('btn-close')
+const closeButton = document.querySelector('.btn-close')
 
 toggleButton.addEventListener('click', ()=> {
     drawer.showModal()
@@ -9,3 +9,6 @@ toggleButton.addEventListener('click', ()=> {
 
 })
 
+closeButton.addEventListener('click', ()=> {
+    drawer.close()
+})

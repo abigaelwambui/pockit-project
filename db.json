@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "apiName": "Pockit Mock Product API",
+    "version": "1.0.0",
+    "description": "Fictional sample data for development only. Not real retailer prices or offers.",
+    "currency": "KES",
+    "lastUpdated": "2026-10-19T09:00:00Z"
+  },
+  "retailers": [
+    {
+      "id": "shop-001",
+      "name": "SampleMart",
+      "type": "online_shop",
+      "website": "https://example.com/samplemart",
+      "dataStatus": "fictional_demo"
+    },
+    {
+      "id": "shop-002",
+      "name": "Demo Deals",
+      "type": "online_shop",
+      "website": "https://example.com/demodeals",
+      "dataStatus": "fictional_demo"
+    },
+    {
+      "id": "shop-003",
+      "name": "Pockit Test Store",
+      "type": "online_shop",
+      "website": "https://example.com/pockitteststore",
+      "dataStatus": "fictional_demo"
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-001",
+      "name": "Sunflower Cooking Oil",
+      "brand": "Sample Gold",
+      "category": "Groceries",
+      "size": "1 litre",
+      "barcode": "MOCK000001",
+      "imageUrl": "assets/Sunflower-Oil.jpeg",
+      "retailerId": "shop-001",
+      "price": 280,
+      "originalPrice": 320,
+      "inStock": true,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/samplemart/cooking-oil",
+      "discount": {
+        "type": "percentage",
+        "value": 12.5,
+        "voucherCode": null,
+        "terms": "Fictional demo offer."
+      }
+    },
+    {
+      "id": "prod-002",
+      "name": "Sunflower Cooking Oil",
+      "brand": "Sample Gold",
+      "category": "Groceries",
+      "size": "1 litre",
+      "barcode": "MOCK000001",
+      "imageUrl": "",
+      "retailerId": "shop-002",
+      "price": 299,
+      "originalPrice": 299,
+      "inStock": true,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/demodeals/cooking-oil",
+      "discount": null
+    },
+    {
+      "id": "prod-003",
+      "name": "Sunflower Cooking Oil",
+      "brand": "Sample Gold",
+      "category": "Groceries",
+      "size": "1 litre",
+      "barcode": "MOCK000001",
+      "imageUrl": "",
+      "retailerId": "shop-003",
+      "price": 275,
+      "originalPrice": 300,
+      "inStock": false,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/pockitteststore/cooking-oil",
+      "discount": {
+        "type": "percentage",
+        "value": 8.33,
+        "voucherCode": "DEMO10",
+        "terms": "Fictional demo voucher; not redeemable."
+      }
+    },
+    {
+      "id": "prod-004",
+      "name": "Long-Grain Rice",
+      "brand": "Harvest Demo",
+      "category": "Groceries",
+      "size": "2 kg",
+      "barcode": "MOCK000004",
+      "imageUrl": "",
+      "retailerId": "shop-001",
+      "price": 340,
+      "originalPrice": 360,
+      "inStock": true,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/samplemart/rice",
+      "discount": {
+        "type": "percentage",
+        "value": 5.56,
+        "voucherCode": null,
+        "terms": "Fictional demo offer."
+      }
+    },
+    {
+      "id": "prod-005",
+      "name": "Long-Grain Rice",
+      "brand": "Harvest Demo",
+      "category": "Groceries",
+      "size": "2 kg",
+      "barcode": "MOCK000004",
+      "imageUrl": "",
+      "retailerId": "shop-002",
+      "price": 325,
+      "originalPrice": 325,
+      "inStock": true,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/demodeals/rice",
+      "discount": null
+    },
+    {
+      "id": "prod-006",
+      "name": "Wireless Earbuds",
+      "brand": "SoundDemo",
+      "category": "Electronics",
+      "size": "1 pair",
+      "barcode": "MOCK000006",
+      "imageUrl": "",
+      "retailerId": "shop-001",
+      "price": 1499,
+      "originalPrice": 1999,
+      "inStock": true,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/samplemart/earbuds",
+      "discount": {
+        "type": "percentage",
+        "value": 25.01,
+        "voucherCode": "SAMPLE500",
+        "terms": "Fictional demo voucher; not redeemable."
+      }
+    },
+    {
+      "id": "prod-007",
+      "name": "Wireless Earbuds",
+      "brand": "SoundDemo",
+      "category": "Electronics",
+      "size": "1 pair",
+      "barcode": "MOCK000006",
+      "imageUrl": "",
+      "retailerId": "shop-002",
+      "price": 1599,
+      "originalPrice": 1599,
+      "inStock": true,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/demodeals/earbuds",
+      "discount": null
+    },
+    {
+      "id": "prod-008",
+      "name": "Laundry Detergent",
+      "brand": "CleanDemo",
+      "category": "Household",
+      "size": "1 kg",
+      "barcode": "MOCK000008",
+      "imageUrl": "",
+      "retailerId": "shop-003",
+      "price": 210,
+      "originalPrice": 240,
+      "inStock": true,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/pockitteststore/detergent",
+      "discount": {
+        "type": "percentage",
+        "value": 12.5,
+        "voucherCode": null,
+        "terms": "Fictional demo offer."
+      }
+    },
+    {
+      "id": "prod-009",
+      "name": "USB-C Charger",
+      "brand": "ChargeDemo",
+      "category": "Electronics",
+      "size": "20 W",
+      "barcode": "MOCK000009",
+      "imageUrl": "",
+      "retailerId": "shop-003",
+      "price": 799,
+      "originalPrice": 899,
+      "inStock": true,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/pockitteststore/charger",
+      "discount": {
+        "type": "percentage",
+        "value": 11.12,
+        "voucherCode": null,
+        "terms": "Fictional demo offer."
+      }
+    },
+    {
+      "id": "prod-010",
+      "name": "Oats",
+      "brand": "Breakfast Demo",
+      "category": "Groceries",
+      "size": "1 kg",
+      "barcode": "MOCK000010",
+      "imageUrl": "",
+      "retailerId": "shop-002",
+      "price": 250,
+      "originalPrice": 250,
+      "inStock": true,
+      "lastChecked": "2026-10-19T09:00:00Z",
+      "productUrl": "https://example.com/demodeals/oats",
+      "discount": null
+    }
+  ],
+  "vouchers": [
+    {
+      "id": "voucher-001",
+      "retailerId": "shop-003",
+      "code": "DEMO10",
+      "description": "Sample voucher for testing only",
+      "minimumSpend": 500,
+      "expiresAt": "2026-12-31T23:59:59Z",
+      "isRedeemable": false
+    },
+    {
+      "id": "voucher-002",
+      "retailerId": "shop-001",
+      "code": "SAMPLE500",
+      "description": "Sample electronics voucher for testing only",
+      "minimumSpend": 1000,
+      "expiresAt": "2026-12-31T23:59:59Z",
+      "isRedeemable": false
+    }
+  ]
+}
