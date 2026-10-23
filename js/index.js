@@ -69,9 +69,11 @@ function displayProduct (group) {
 
 function displayStores (data) {
     const retailers =  data.retailers
+    const products = data.retailers
+    const stores = document.querySelector("#retailers")
 
     retailers.forEach(retailer => {
-        const stores = document.querySelector("#retailers")
+        
 
         const storeContainer = document.createElement("div")
         storeContainer.className = "card "
@@ -91,6 +93,7 @@ function displayStores (data) {
         stores.appendChild(storeContainer)
     })
 
+    stores.
  
 }
 
