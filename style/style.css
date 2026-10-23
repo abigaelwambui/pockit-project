@@ -2,7 +2,8 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css");
 
 body {
-    margin:unset
+    margin:unset;
+    background-color: white
 }
 
 html {
