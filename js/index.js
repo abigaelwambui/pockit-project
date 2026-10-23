@@ -1,35 +1,29 @@
 //Get products from the API
-async function getProducts() {
+async function getData() {
     try{
-        const response = await fetch("http://localhost:3000/products");
+        const response = await fetch("https://abigaelwambui.github.io/pockit-project/db.json");
 
         if(!response.ok) {
             throw new Error("Failed to fetch products");
         }
 
-        const products = await response.json()
+        const data = await response.json()
+        return data
+        
+    } catch(error) {
+        console.error("Error fetching data:", error);
+        return null;
+    }
+}    
+getData()
 
-        //Group products according to product name
+function groupProducts (info) {
+    const products = info.products
+
+    //Group products according to product name
         const groupedProducts = comparePrices(products)
         displayProduct(groupedProducts)
-    } catch {}
-}    
-getProducts()
-
-async function getStores() {
-    try{
-        const response = await fetch("http://localhost:3000/retailers");
-
-        if(!response.ok) {
-            throw new Error("Failed to fetch products");
-        }
-
-        const retailers = await response.json()
-
-        console.log(retailers)
-    } catch {}
 }
-getStores()
 
 function comparePrices (data) {
     const groupProducts = Object.groupBy(data, product => product.name)
@@ -70,13 +64,43 @@ function displayProduct (group) {
     
 }
 
-displayProduct(groupProducts)
 
 
-function displayStores (store) {
-    
+
+function displayStores (data) {
+    const retailers =  data.retailers
+
+    retailers.forEach(retailer => {
+        const stores = document.querySelector("#retailers")
+
+        const storeContainer = document.createElement("div")
+        storeContainer.className = "card "
+        storeContainer.setAttribute("style", "width: 18rem;")
+
+        const storeCard = document.createElement("div")
+        storeCard.className = "card-body"
+        storeCard.classList.add("shadow-lg")
+        
+
+        storeCard.innerHTML = `
+            <img src="${retailer.imageUrl}" class="card-img" alt="image of ${retailer.name}">
+            <h5 class="mt-2 mb-0">${retailer.name}</h5>
+            <p class="card-text fg-2">Store Type: - ${retailer.type}</p>
+        `
+        storeContainer.appendChild(storeCard)
+        stores.appendChild(storeContainer)
+    })
+
+ 
 }
 
-    
+async function displayAll() {
+    const data = await getData()
+
+    groupProducts(data)
+    displayStores(data)
+}
+
+displayAll()
 
 
