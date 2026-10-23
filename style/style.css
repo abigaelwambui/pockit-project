@@ -8,30 +8,36 @@ body {
 html {
     scroll-behavior: smooth;
 }
+main .navbar .searchbar {
+    float: right
+}
 
-main #hero-section {
+main .carousel-item {
+    height: 21rem
+}
+
+main .carousel-item .hero-content {
     display: flex;
     justify-content: space-evenly;
+    background-color: hwb(117 0% 77% / 0.242);
     flex-direction: row;
     text-align: left;
-    background-color: hwb(117 0% 77% / 0.242);
     font-size: 1.2em;
-    padding: 2em;
     width: 100%;
     
 }
 
-main #hero-section .hero-img {
+main .carousel-item .hero-img {
     margin: 0 3em 0 0
 }
 
-#hero-section .hero-text {
+.carousel-item .hero-text {
     display: flex;
     flex-direction: column;
     margin: 3em;
 }
 
-.hero-text h1.text-white {
+.carousel-item .hero-text h1.text-white {
     color: white;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
@@ -41,7 +47,7 @@ main #hero-section .hero-img {
     margin: 0;
 }
 
-.hero-text .text-green {
+.carousel-item .hero-text .text-green {
     color: hwb(132 0% 79%);
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
@@ -51,7 +57,7 @@ main #hero-section .hero-img {
     margin: 0;
 }
 
-.hero-text p {
+.carousel-item .hero-text p {
     color: white;
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;

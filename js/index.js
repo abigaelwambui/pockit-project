@@ -16,6 +16,21 @@ async function getProducts() {
 }    
 getProducts()
 
+async function getStores() {
+    try{
+        const response = await fetch("http://localhost:3000/retailers");
+
+        if(!response.ok) {
+            throw new Error("Failed to fetch products");
+        }
+
+        const retailers = await response.json()
+
+        console.log(retailers)
+    } catch {}
+}
+getStores()
+
 function comparePrices (data) {
     const groupProducts = Object.groupBy(data, product => product.name)
     
@@ -58,9 +73,9 @@ function displayProduct (group) {
 displayProduct(groupProducts)
 
 
-
-    // const groupedProducts = Object.groupBy(products, product => product.name)
-    // const productGroup = Object.values(groupedProducts)
+function displayStores (store) {
+    
+}
 
     
 
