@@ -159,4 +159,13 @@ main .card-carousel {
     margin: 2rem
     }
 
+    .products #featured-products {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .carousel-item img {
+        display: none
+    }
+
 }

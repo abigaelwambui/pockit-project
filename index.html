@@ -44,8 +44,8 @@
                             
                         </ul>
                         <form class="searchbar hstack gap-2 ms-auto end-0" role="search">
-                            <input class="form-control w-25" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn-solid btn-icon theme-secondary" type="submit">
+                            <input class="form-control w-25 search-input" type="search" placeholder="Search" aria-label="Search"/>
+                            <button class="btn-solid btn-icon theme-secondary search-button" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                                 </svg>
@@ -122,11 +122,12 @@
 
         <section id="products" class="content">
           <h3>Featured Products</h3>
-          <div id="featured-products" class="card-carousel"></div>
+          <div id="featured-products" class="d-flex flex-row gap-3 m-5"></div>
         </section>
-        <section id="stores" class="content">
-            <h3>Trending Stores</h3>
-            <div id="retailers" class="card-carousel"></div>
+        <section id="stores" class="content conatiner">
+            <h3>The Retailers</h3>
+            <div id="retailers" class="d-flex flex-column gap-3 m-5 justify-content-center"></div>
+        
         </section>
         <div id="contact-us" class="content mt-5 rounded-top bg-1 p-5 " >
             <h3>Contact Us!</h3>
