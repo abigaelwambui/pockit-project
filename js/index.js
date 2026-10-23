@@ -36,6 +36,7 @@ function displayProduct (group) {
 
         const productCard = document.createElement("div")
         productCard.className = "card-body"
+        productCard.classList.add("shadow-lg")
         
 
         productCard.innerHTML = `

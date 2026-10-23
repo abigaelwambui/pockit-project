@@ -61,17 +61,23 @@ main #hero-section .hero-img {
     margin: 0;
 }
 
-main #products {
+main .content {
     margin: 2em 1em 
 }
 
-main #products h3 {
+main .content h3 {
     color: hwb(132 0% 79%);
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-weight: bold;
     padding: 0 1.5em
 }
+
+main .content .contact {
+    padding: 0 2em
+}
+
+
 
 body #footer {
     color: hwb(132 0% 79%);
