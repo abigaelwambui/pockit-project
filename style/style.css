@@ -61,6 +61,18 @@ main #hero-section .hero-img {
     margin: 0;
 }
 
+main #products {
+    margin: 2em 1em 
+}
+
+main #products h3 {
+    color: hwb(132 0% 79%);
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    padding: 0 1.5em
+}
+
 body #footer {
     color: hwb(132 0% 79%);
     font-family: "Raleway", sans-serif;
@@ -80,6 +92,14 @@ li .footer-link{
     color: hwb(132 0% 79%);
 }
 
+main .card-carousel {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin: 2rem
+}
+
+
 
 
 @media screen and (max-width: 650px) {
@@ -97,5 +117,10 @@ li .footer-link{
         text-align: center
     }
 
+    main .card-carousel {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem
+    }
 
 }

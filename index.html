@@ -30,20 +30,21 @@
                                 <a class="nav-link active" aria-current="page" href="#">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#price-compare">Compare Prices</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#deals">Deals</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#vouchers">Vouchers</a>
+                                <a class="nav-link" href="#featured-products">Featured Products</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#stores">Stores</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#deals">Contact Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#vouchers">About Us</a>
+                            </li>
+                            
                         </ul>
-                        <form class="hstack gap-2" role="search">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search"/>
+                        <form class="hstack gap-2 ms-auto" role="search">
+                            <input class="form-control w-50" type="search" placeholder="Search" aria-label="Search" width="10"/>
                             <button class="btn-solid btn-icon theme-secondary" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
@@ -66,29 +67,28 @@
                 <img src="assets/deals-hero.png" class="rounded float-end" width="300px" alt="save money"/>
             </div>
         </section>
-        
-        <section id="price-compare">
-            <div class="card" style="width: 18rem;">
 
-            </div>
+        <section id="products">
+          <h3>Featured Products</h3>
+          <div id="featured-products" class="card-carousel"></div>
         </section>
-        <section id="deals">
+        <section id="deals" class="card-carousel" >
             <div class="card" style="width: 18rem;">
                 
             </div>
         </section>
-        <section id="vouchers">
+        <section id="vouchers" class="card-carousel">
             <div class="card" style="width: 18rem;">
                 
             </div>
         </section>
-        <section id="stores">
+        <section id="stores" class="card-carousel">
             <div class="card" style="width: 18rem;">
                 
             </div>
         </section>
     </main>
-    <br>
+
     <footer id="footer">
         <div class="container">
             <ul id="company-footer">
