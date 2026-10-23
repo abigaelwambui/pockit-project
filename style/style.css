@@ -77,7 +77,30 @@ main .content .contact {
     padding: 0 2em
 }
 
+main .content h4 {
+    color: hwb(132 0% 79%);
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    padding: 0 1.5em
+}
 
+main .content p {
+    color: hwb(132 0% 79%);
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    padding: 0 1.5em
+}
+
+main .content h5 {
+    color: hwb(132 0% 79%);
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    padding: 0 1.5em
+}
+
+main #contact-us {
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.12);
+}
 
 body #footer {
     color: hwb(132 0% 79%);
