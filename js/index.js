@@ -83,7 +83,7 @@ function displayRetailerProducts(products, retailers) {
     retailers.forEach(retailer =>{
         //Create a section for the retailer
         const retailerSection = document.createElement("section")
-        retailerSection.className = "container contains-inline p-3"
+        retailerSection.className = "retailer-section container contains-inline p-3"
 
         const retailerLink = document.createElement("a")
         retailerLink.setAttribute("href", `${retailer.website}`)
@@ -95,7 +95,7 @@ function displayRetailerProducts(products, retailers) {
         retailerSection.appendChild(retailerLink)
 
         const productList = document.createElement ("div")
-        productList.className = "card-group "
+        productList.className = "product-list card-group "
 
         const retailerProducts = products.filter(product =>
             product.retailerId === retailer.id
@@ -148,8 +148,15 @@ function searchProducts() {
     // Display only matching products in retailers
     displayRetailerProducts(filteredProducts, retailers);
 
+    if (searchedItems === ""){
+        container.classList.remove("search-results")
+    } else {
+        container.classList.add("search-results")
+    }
+    
+
     // Scroll to the results
-    retailersContainer.scrollIntoView({
+    container.scrollIntoView({
         behavior: "smooth"
     });
 }
