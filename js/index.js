@@ -42,6 +42,8 @@ function groupByName (data) {
 
 function displayProduct (group) {
 
+    featuredContainer.innerHTML = "";
+
     //Sorts from lowest value to highest
     Object.values(group).forEach(items => {
         items.sort ((a, b) => a.price - b.price)
@@ -90,8 +92,7 @@ function displayRetailerProducts(products, retailers) {
         const retailerName = document.createElement("h3")
        
         retailerName.textContent = `${retailer.name}`
-        retailerLink.appendChild(retailerName)
-        retailerSection.appendChild(retailerLink)
+        
 
         const productList = document.createElement ("div")
         productList.className = "product-list card-group "
@@ -127,6 +128,8 @@ function displayRetailerProducts(products, retailers) {
             container.appendChild(retailerSection)
 
         })
+        retailerLink.appendChild(retailerName)
+        retailerSection.appendChild(retailerLink)
 
     })
     
@@ -160,6 +163,53 @@ function searchProducts() {
     });
 }
 
+const contactForm = document.querySelector("#contact-form")
+const formMessage = document.querySelector("#form-message")
+
+contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault()
+    const formData = {
+        firstName: document.querySelector("#first-name").value.trim(),
+        lastName: document.querySelector("#last-name").value.trim(),
+        email: document.querySelector("#email-info").value.trim()
+    }
+    
+    
+
+    if (!formData.firstName || !formData.lastName || !formData.email) {
+        formMessage.textContent = "Please fill in the requred fields"
+    }
+
+    try {
+        formMessage.textContent = "Submitting your info..."
+
+        const response = await fetch(
+            "https://jsonplaceholder.typicode.com/posts",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            }
+        )
+
+        if (!response.ok) {
+            throw new Error ("Failed to submit the form");
+
+        }
+
+        const result = await response.json()
+        console.log("Response:", result)
+        formMessage.textContent = `Thankyou, ${formData.firstName}! Your form has been submitted succesfully`
+
+        contactForm.reset()
+    } catch(error) {
+        console.error("Error:", error)
+        formMessage.textContent = "Something went wrong. Please try again"
+    }
+    
+})
 
 
 async function displayAll() {
