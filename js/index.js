@@ -135,15 +135,14 @@ function displayRetailerProducts(products, retailers) {
 //Implement search input
 function searchProducts() {
     const searchedItems = searchInput.value.trim().toLowerCase();
-    console.log(term)
+    console.log(searchedItems)
 
     // Find matching products
     const filteredProducts = products.filter(product =>
         product.name.toLowerCase().includes(searchedItems)
     );
 
-    // Clear featured products
-    featuredContainer.innerHTML = "";
+   
 
     // Display only matching products in retailers
     displayRetailerProducts(filteredProducts, retailers);
