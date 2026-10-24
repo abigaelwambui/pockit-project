@@ -67,9 +67,6 @@
                             <br>
                             <div><a class="btn-outline theme-inverse" href="#stores">Get started</a></div>
                         </div>
-                        <div class="container hero-img container"  >
-                            <img src="assets/deals-hero.png" class="rounded float-end" width="300px" alt="save money"/>
-                        </div>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -80,10 +77,7 @@
                             <p>You don't need to break the bank to live good. Check out the hot deals today</p>
                             <br>
                             <div><a class="btn-outline theme-inverse" href="#stores">Get started</a></div>
-                        </div>
-                        <div class="container hero-img container"  >
-                            <img src="assets/Saving Doodle Finance Collage.png" class="rounded float-end" margin="0 3em 0 0" width="300px" alt="save money"/>
-                        </div>
+                        </div>  
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -94,9 +88,6 @@
                             <p>Get the latest discounts and vouchers from your favourite stores</p>
                             <br>
                             <div><a class="btn-outline theme-inverse" href="#featured-products">Get started</a></div>
-                        </div>
-                        <div class="container hero-img container"  >
-                            <img src="assets/Shopping Online with a Giant Smartphone.png" class="rounded float-end" margin="0 3em 0 0" width="300px" alt="save money"/>
                         </div>
                     </div>
                 </div>
@@ -119,43 +110,54 @@
                 </div>
             </div>
         </div>
+        <section id="features">
+            <section id="products" class="content text-center mt-5 py">
+            <h3>Featured Products</h3>
+            <hr>
+            <p>Check out the the latest deals and products</p>
+            <div id="featured-products" class="d-flex flex-row gap-3 m-5"></div>
+            </section>
+            <section id="stores" class="content conatiner text-center mt-5 py">
+                <h3>The Retailers</h3>
+                <hr>
+                <p>You can check out different shops with just the press of a button</p>
+                <div id="retailers" class=""></div>
+            
+            </section>
+        </section>
 
-        <section id="products" class="content">
-          <h3>Featured Products</h3>
-          <div id="featured-products" class="d-flex flex-row gap-3 m-5"></div>
-        </section>
-        <section id="stores" class="content conatiner">
-            <h3>The Retailers</h3>
-            <div id="retailers" class="d-flex flex-column gap-3 m-5 justify-content-center"></div>
         
-        </section>
+
         <div id="contact-us" class="content mt-5 rounded-top bg-1 p-5 " >
             <h3>Contact Us!</h3>
             <div class="d-flex justify-content-center gap-5">
                 <div>
-                    <img src="assets/online-shopping.jpg" class="rounded" width="100%">
+                    <img src="assets/Online-Shopping-vs.-Traditional-Shopping-Pros-and-Cons.png" class="rounded" width="100%%">
                 </div>
-                <form class="row gap-1 contact p-5">
-                    <div class="col-md-6">
-                        <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName" required>
+                <form class="contact p-3">
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="emailInfo" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailInfo" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="phoneNumber" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="phoneNumber" placeholder="+25412345689">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="comments" class="form-label">Comments</label>
+                            <textarea class="form-control" id="comments" rows="3"></textarea>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                        <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" required>
-                    </div>
-                    <div class="col-md-8">
-                        <label for="emailInfo" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="emailInfo" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="phoneNumber" class="form-label">Phone Number</label>
-                        <input type="text" class="form-control" id="phoneNumber" placeholder="+25412345689">
-                    </div>
-                    <div class="col-md-12">
-                        <label for="comments" class="form-label">Comments</label>
-                        <textarea class="form-control" id="comments" rows="3"></textarea>
-                    </div>
+                    
                 </form>
                 
             </div>
@@ -164,59 +166,69 @@
             </div>
             
         </div>
-        <section id="about-us" class="content mt-5 rounded-bottom bg-1 shadow-lg p-5">
-            <h3>About Pockit</h3>
-            <br>
-            <h4>Shop smart. Save more.</h4>
-            <p>Pockit helps you discover better prices, compare products across stores, and find deals and vouchers without the endless searching. We're making smarter shopping simpler for Kenyans, one shilling at a time.</p>
-            <h5>Pockit. Find the deal. Keep the change.</h5>
+        <section id="about-us" class="content mt-5 rounded-bottom bg-1 shadow-lg p-5 d-flex flex-row" width="450px">
+            <div width="450px">
+                <h3>About Pockit</h3>
+                <br>
+                <h4>Shop smart. Save more.</h4>
+                <p>Pockit helps you discover better prices, compare products across stores, and find deals and vouchers without the endless searching. We're making smarter shopping simpler for Kenyans, one shilling at a time.</p>
+                <h5>Pockit. Find the deal. Keep the change.</h5>
+
+                <a class="btn-outline theme-inverse" href="#contact-us">Contact Us</a>
+            </div>
+            
         </section>
         
     </main>
 
-    <footer id="footer">
-        <div class="container">
-            <ul id="company-footer">
-                <li>
-                    <h4>Company</h4>
-                </li>
-                <li>
-                    <a aria-label="About" class="footer-link" href="#about-us">About</a>
-                </li>
+    <footer >
+        <div id=footer>
+            <div class="container">
+                <ul id="company-footer">
+                    <li>
+                        <h4>Company</h4>
+                    </li>
+                    <li>
+                        <a aria-label="About" class="footer-link" href="#about-us">About</a>
+                    </li>
+                    
+                    <li>
+                        <a aria-label="Help" class="footer-link" href="#contact-us">Help</a>
+                    </li>
+                    <li>
+                        <a aria-label="News" class="footer-link" href="#">News</a>
+                    </li>
+                    <li>
+                        <a aria-label="Media" class="footer-link" href="#">Media</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container">
+                <ul id="follow-footer">
+                    <li>
+                        <h4>Follow Us</h4>
+                    </li>
+                    <li>
+                        <a aria-label="Facebook" href="https://www.facebook.com/" class="footer-link">Facebook</a>
+                    </li>
+                    <li>
+                        <a aria-label="Twitter" href="https://www.x.com/" class="footer-link">Twitter</a>
+                    </li>
+                    <li>
+                        <a aria-label="Instagram" href="https://www.instagram.com/" class="footer-link">Instagram</a>
+                    </li>
+                    <li>
+                        <a aria-label="Pinterest" href="https://www.pinterest.com/" class="footer-link">Pinterest</a>
+                    </li>
+                </ul>
                 
-                <li>
-                    <a aria-label="Help" class="footer-link" href="#contact-us">Help</a>
-                </li>
-                <li>
-                    <a aria-label="News" class="footer-link" href="#">News</a>
-                </li>
-                <li>
-                    <a aria-label="Media" class="footer-link" href="#">Media</a>
-                </li>
-            </ul>
+                
+                
+            </div>
         </div>
-        <div class="container">
-            <ul id="follow-footer">
-                <li>
-                    <h4>Follow Us</h4>
-                </li>
-                <li>
-                    <a aria-label="Facebook" href="https://www.facebook.com/" class="footer-link">Facebook</a>
-                </li>
-                <li>
-                    <a aria-label="Twitter" href="https://www.x.com/" class="footer-link">Twitter</a>
-                </li>
-                <li>
-                    <a aria-label="Instagram" href="https://www.instagram.com/" class="footer-link">Instagram</a>
-                </li>
-                <li>
-                    <a aria-label="Pinterest" href="https://www.pinterest.com/" class="footer-link">Pinterest</a>
-                </li>
-            </ul>
-            
-            
-            
-        </div>
+        
+        <hr>
+        <p>©2026 Pockit-ECommerce Co.</p>
     </footer>
     
     <script src="js/index.js"></script>

@@ -1,7 +1,12 @@
-const searchInput = document.querySelector("#search-input")
-const searchButton = document.querySelector("#search-button")
+const searchInput = document.querySelector(".search-input")
+const searchButton = document.querySelector(".search-button")
+const featuredContainer = document.querySelector("#featured-products")
+const container = document.querySelector("#retailers")
 
-//Get products from the API
+let products;
+let retailers;
+
+//Get data from the API
 async function getData() {
     try{
         const response = await fetch("https://abigaelwambui.github.io/pockit-project/db.json");
@@ -20,30 +25,17 @@ async function getData() {
 }    
 getData()
 
-function getProducts (info) {
-    const products = info.products
 
-    searchInput.addEventListener ("input", (event)=> {
-        const value = event.target.value.toLowerCase().trim()
-        const searchedProduct = products.filter(product => {
-            return product.name.includes(value)
-        })
-        
-        displayRetailerProducts(searchedProduct)
-    })
-    
-
-    groupProducts(products)
-}
-
+//group products from data by name
 function groupProducts (allProducts) {
     //Group products according to product name
-        const groupedProducts = comparePrices(allProducts)
+        const groupedProducts = groupByName(allProducts)
 
         displayProduct(groupedProducts)
 }
 
-function comparePrices (data) {
+function groupByName (data) {
+    //Returns an object of products with similar names
     const groupProducts = Object.groupBy(data, product => product.name)
     
     return groupProducts
@@ -51,11 +43,12 @@ function comparePrices (data) {
 
 function displayProduct (group) {
 
+    //Sorts from lowest value to highest
     Object.values(group).forEach(items => {
         items.sort ((a, b) => a.price - b.price)
 
         const item = items[0]
-        const container = document.querySelector("#featured-products")
+        
 
         const cardContainer = document.createElement("div")
         cardContainer.className = "card "
@@ -65,37 +58,26 @@ function displayProduct (group) {
         productCard.className = "card-body"
         productCard.classList.add("shadow-lg")
         
-
+        //Add content to the product card
         productCard.innerHTML = `
             <img src="${item.imageUrl}" class="card-img" alt="image of ${item.name}">
-            <h5 class="mt-2 mb-0">${item.name}</h5>
+            <h5 class="mt-2 mb-0">${item.name}  ${item.size}</h5>
             <p class="card-text fg-2">Brand: - ${item.brand}</p>
-            <p class="card-text fg-2">Size: - ${item.size}</p>
             <p class="card-text fg-2">Price: - ${item.price}</p>
             <small class="fg-3">Original Price - ${item.originalPrice}</small>
         `
         cardContainer.appendChild(productCard)
-        container.appendChild(cardContainer)
+        featuredContainer.appendChild(cardContainer)
 
     })
-
-    
-}
-
-function getRetailerProduct(data) {
-    const retailers = data.retailers
-    const products = data.products
-
-    displayRetailerProducts(products, retailers)
+ 
 }
 
 
 
 function displayRetailerProducts(products, retailers) {
 
-    const container = document.querySelector("#retailers")
-    
-
+    //Clear the container
     container.innerHTML = ""
 
     retailers.forEach(retailer =>{
@@ -115,11 +97,11 @@ function displayRetailerProducts(products, retailers) {
             product.retailerId === retailer.id
         );
 
-
+        //Create a product card for each of the retailer products
         retailerProducts.forEach(product => {
             const productContainer = document.createElement("div")
             productContainer.className = "card m-5"
-            productContainer.setAttribute("style", "width: 20rem;")
+            productContainer.setAttribute("style", "width: 18rem;")
 
             const productCard = document.createElement("div")
             productCard.className = "card h-100 shadow-lg"
@@ -150,14 +132,46 @@ function displayRetailerProducts(products, retailers) {
     
 }
 
+//Implement search input
+function searchProducts() {
+    const searchedItems = searchInput.value.trim().toLowerCase();
+    console.log(term)
+
+    // Find matching products
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(searchedItems)
+    );
+
+    // Clear featured products
+    featuredContainer.innerHTML = "";
+
+    // Display only matching products in retailers
+    displayRetailerProducts(filteredProducts, retailers);
+
+    // Scroll to the results
+    retailersContainer.scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
 
 async function displayAll() {
     const data = await getData()
 
-    getAllProducts(data)
-    getRetailerProduct(data)
+    products = data.products
+    retailers = data.retailers
+    
+    displayRetailerProducts(products, retailers)
+    groupProducts(products)
 }
 
 displayAll()
+
+searchButton.addEventListener("click", searchProducts);
+
+searchInput.addEventListener("keydown", event => {
+    if (event.key === "Enter") searchProducts();
+});
 
 
