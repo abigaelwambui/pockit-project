@@ -83,15 +83,19 @@ function displayRetailerProducts(products, retailers) {
     retailers.forEach(retailer =>{
         //Create a section for the retailer
         const retailerSection = document.createElement("section")
-        retailerSection.className = "retailer-section"
+        retailerSection.className = "container contains-inline p-3"
 
-
+        const retailerLink = document.createElement("a")
+        retailerLink.setAttribute("href", `${retailer.website}`)
+        retailerLink.className = "theme-inverse underline-offset-2 underline-20 hover:underline-100"
         const retailerName = document.createElement("h3")
+       
         retailerName.textContent = `${retailer.name}`
-        retailerSection.appendChild(retailerName)
+        retailerLink.appendChild(retailerName)
+        retailerSection.appendChild(retailerLink)
 
         const productList = document.createElement ("div")
-        productList.className = "d-flex flex-wrap flex-row gap-9"
+        productList.className = "card-group "
 
         const retailerProducts = products.filter(product =>
             product.retailerId === retailer.id
@@ -100,11 +104,11 @@ function displayRetailerProducts(products, retailers) {
         //Create a product card for each of the retailer products
         retailerProducts.forEach(product => {
             const productContainer = document.createElement("div")
-            productContainer.className = "card m-5"
-            productContainer.setAttribute("style", "width: 18rem;")
+            productContainer.className = "card"
+            // productContainer.setAttribute("style", "width: 18rem;")
 
             const productCard = document.createElement("div")
-            productCard.className = "card h-100 shadow-lg"
+            productCard.className = "card h-100"
             
             productCard.innerHTML = `<img src="${product.imageUrl}" class="card-img-top" alt="image of ${product.name}">`
 
@@ -113,11 +117,8 @@ function displayRetailerProducts(products, retailers) {
 
             cardBody.innerHTML = `
                 
-                <h4 class="card-title">${product.name}</h5>
-                <p class="card-text fg-2">Brand: - ${product.brand}</p>
-                <p class="card-text fg-2">Size: - ${product.size}</p>
+                <h4 class="card-title">${product.name}, ${product.size}</h5>
                 <p class="card-text fg-2">Price: - ${product.price}</p>
-                <small class="fg-3">Store: - ${retailer.name}</small>
             `
             
             productCard.appendChild(cardBody)
