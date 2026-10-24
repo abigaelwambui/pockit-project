@@ -22,8 +22,7 @@ async function getData() {
         console.error("Error fetching data:", error);
         return null;
     }
-}    
-getData()
+}
 
 
 //group products from data by name
@@ -165,6 +164,8 @@ function searchProducts() {
 
 async function displayAll() {
     const data = await getData()
+
+    if(!data)return;
 
     products = data.products
     retailers = data.retailers
